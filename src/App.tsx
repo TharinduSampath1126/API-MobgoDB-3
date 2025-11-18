@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router';
 import { useState, useEffect } from 'react';
-import Dashboard from './pages/Dashboard';
-import Manual from './pages/Manual';
-import API from './pages/API';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import NotFound from './pages/NotFound';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Manual from './pages/pageA/Manual';
+import API from './pages/pageB/API';
+import Login from './components/customUi/Login';
+import Register from './components/customUi/Register';
+import NotFound from './components/customUi/NotFound';
 import { Layout } from './components/Layout/Navigation';
 import { ThemeProvider } from './contexts/ThemeContext';
 

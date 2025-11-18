@@ -1,10 +1,10 @@
 import { useState ,useEffect} from "react"
-import { DataTable } from "../customUi/data-table"
-import { createManualColumns } from "./manual-columns"
+import { DataTable } from "../../components/customUi/data-table"
+import { createManualColumns } from "../../components/ManualTable/manual-columns"
 import { ManualUser } from "../../types/ManualUser"
-import Form from "./Form"
-import { UserDetailsDialog } from "./UserDetailsDialog"
-import { DeleteAllUsersDialog } from "../customUi/alertDialog"
+import Form from "../../components/ManualTable/Form"
+import { UserDetailsDialog } from "../../components/ManualTable/UserDetailsDialog"
+// import { DeleteAllUsersDialog } from "../customUi/alertDialog"
 import { Button } from "@/components/ui/button"
 import {
   ChevronLeft,
@@ -17,7 +17,7 @@ import { useManualUserStore } from '../../stores/manualUserStore'
 
 
 const ManualTable = () => {
-  const { users: manualUsers, addUser, deleteUser, updateUser, clearAll, setUsers } = useManualUserStore()
+  const { users: manualUsers, deleteUser, updateUser, setUsers } = useManualUserStore()
   const [selectedUser, setSelectedUser] = useState<ManualUser | null>(null)
   const [viewDialogOpen, setViewDialogOpen] = useState(false)
 const [currentPage, setCurrentPage] = useState(1)
@@ -56,7 +56,7 @@ useEffect(() => {
 }, [])
 
 
-  const handleAddUser = (user: ManualUser) => {
+  const handleAddUser = () => {
   fetchUsers(currentPage)
 }
 
@@ -64,11 +64,6 @@ useEffect(() => {
   const handleDeleteUser = (userId: number) => {
     deleteUser(userId)
     fetchUsers(currentPage)
-  }
-
-  const handleDeleteAll = () => {
-    clearAll()
-    toast.success('All users deleted successfully')
   }
 
   const handleViewUser = (user: ManualUser) => {

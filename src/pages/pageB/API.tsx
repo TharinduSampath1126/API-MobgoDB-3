@@ -1,4 +1,4 @@
-import { DataTable } from "../components/customUi/data-table";
+import { DataTable } from "../../components/customUi/data-table";
 import { createProductColumns } from "@/components/app/products/columns";
 import { ProductDetailsDialog } from "@/components/app/products/ProductDetailsDialog";
 import { fetchProductsList } from "@/apis/user";

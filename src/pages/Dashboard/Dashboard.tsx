@@ -1,11 +1,11 @@
 import { Users, Database,  BookOpen ,ShoppingCart } from 'lucide-react'
-import { CourseBreakdownChart } from '../components/dashboard/CourseBreakdownChart'
-import { StatCard } from '../components/dashboard/StatCard'
-import { RecentEnrollments } from '../components/dashboard/RecentEnrollments'
-import { TopRatedProducts } from '../components/dashboard/TopRatedProducts'
-import { ProductCategoriesPieChart } from '../components/dashboard/ProductCategoriesPieChart'
-import { useManualUserStore } from '../stores/manualUserStore'
-import { useProductCategoriesCount, useProductsCount } from '../hooks/useUser'
+import { CourseBreakdownChart } from '../../components/dashboard/CourseBreakdownChart'
+import { StatCard } from '../../components/dashboard/StatCard'
+import { RecentEnrollments } from '../../components/dashboard/RecentEnrollments'
+import { TopRatedProducts } from '../../components/dashboard/TopRatedProducts'
+import { ProductCategoriesPieChart } from '../../components/dashboard/ProductCategoriesPieChart'
+import { useManualUserStore } from '../../stores/manualUserStore'
+import { useProductCategoriesCount, useProductsCount } from '../../hooks/useUser'
 
 const Dashboard = () => {
   const users = useManualUserStore((state) => state.users)
@@ -42,7 +42,7 @@ const Dashboard = () => {
   ]
   return (
     <div className="space-y-6 p-8 ">
-      <div className="grid grid-cols-1  md:grid-cols-4 gap-6">
+      {/* <div className="grid grid-cols-1  md:grid-cols-4 gap-6">
         {statsCards.map((card, index) => (
           <StatCard 
             key={index}
@@ -52,7 +52,7 @@ const Dashboard = () => {
             color={card.color}
           />
         ))}
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <RecentEnrollments />

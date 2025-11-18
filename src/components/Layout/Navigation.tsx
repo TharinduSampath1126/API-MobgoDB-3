@@ -5,7 +5,7 @@ import { Button } from '../ui/button'
 import UserProfile from '../common/UserProfile'
 import { DateTime } from '../common/DateTime'
 import { ThemeToggle } from '../common/ThemeToggle'
-import Dashboard from '../../pages/Dashboard';
+import Dashboard from '../../pages/Dashboard/Dashboard';
 
 interface LayoutProps {
   children: React.ReactNode
@@ -46,7 +46,7 @@ export function Layout({ children, isAuthenticated }: LayoutProps) {
           <h2 className="font-bold text-blue-800 dark:text-blue-400 flex items-center gap-2 text-sm transition-colors">
             <LayoutDashboard className="h-6 w-6" /> Dashboard 
           </h2>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
 
         <div className="flex-1 p-4 space-y-2">
@@ -79,7 +79,7 @@ export function Layout({ children, isAuthenticated }: LayoutProps) {
             Settings
           </Button>
           <div className="pt-2">
-            <UserProfile isAuthenticated={isAuthenticated} />
+            {/* <UserProfile isAuthenticated={isAuthenticated} /> */}
           </div>
         </div>
       </nav>
@@ -92,7 +92,8 @@ export function Layout({ children, isAuthenticated }: LayoutProps) {
             <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors">{subtitle}</p>
           </div>
           <div className="flex items-center gap-4">
-            <DateTime />
+            {/* <DateTime /> */}
+            <UserProfile isAuthenticated={isAuthenticated} />
           </div>
         </header>
 
